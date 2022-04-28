@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Kitchen Story</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <form class="d-flex">
+      <input
+        name="search"
+        [(ngModel)]="searchtext"
+        class="form-control me-2"
+        type="text"
+        placeholder="Search"
+      />
+      <button
+        routerLink="/search"
+        (click)="search()"
+        class="btn btn-primary"
+        type="button"
+      >
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          <!-- {{length}} -->
+        </span>
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </button>
+    </form>
+
+    <button
+      *ngIf="isAdmin"
+      class="navbar-brand"
+      routerLink="/addnewcake"
+      class="btn btn-info"
+    >
+      Add New Cake
+    </button>
+
+    <!-- <ul class="navbar-nav">
+            <div class="d-flex">
+             <li class="nav-item"> <button routerLink="/myorders"  class="btn btn-success" type="submit">MyOrders</button></li>
+             </div>
+             </ul> -->
+    <!-- <ul class="navbar-nav">
+              <div class="d-flex">
+
+               <li class="nav-item"> <button  *ngIf="isloggedin"  routerLink="/cart"  class="btn btn-warning position-relative mr-5"> <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                <span class="visually-hidden"></span>{{length}}</span><fa-icon [icon]="faCartShopping"></fa-icon></button></li>
+                </div>
+                </ul> -->
+
+    <ul class="navbar-nav">
+      <div class="d-flex">
+        <li class="nav-item">
+          <button
+            *ngIf="!isloggedin"
+            routerLink="/login"
+            (click)="login()"
+            class="btn btn-success"
+            type="submit"
+          >
+            Login
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            *ngIf="isloggedin"
+            routerLink="/myorders"
+            class="btn btn-success"
+            type="submit"
+          >
+            MyOrders
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            *ngIf="isloggedin"
+            routerLink="/cart"
+            class="btn btn-warning position-relative mr-5"
+          >
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              <span class="visually-hidden"></span>{{ length }}</span
+            ><fa-icon [icon]="faCartShopping"></fa-icon>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            (click)="logout()"
+            *ngIf="isloggedin"
+            routerLink="/login"
+            class="btn btn-danger ml-5"
+            type="submit"
+          >
+            <fa-icon [icon]="faSignOut"></fa-icon>
+          </button>
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>

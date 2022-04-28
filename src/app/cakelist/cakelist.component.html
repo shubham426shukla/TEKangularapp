@@ -1,0 +1,20 @@
+
+<button (click)="ASCsort()" type="button" class="btn btn-primary">Price--Low To High</button>
+<button (click)="DSCsort()" type="button" class="btn btn-info">Price--High to Low</button>
+<button (click)="(popularity())" type="button" class="btn btn-info">Popularity</button>
+
+<!-- <app-addnewcake></app-addnewcake> -->
+<!--<button (click)="(seetoast())" type="button" class="btn btn-info">Toastr</button>-->
+
+
+<div class="row">
+<!--<app-cake class="col" [cakedata]="cakes[0]"></app-cake>
+<app-cake class="col" [cakedata]="cakes[1]"></app-cake>
+<app-cake class="col" [cakedata]="cakes[0]"></app-cake>
+<app-cake class="col" [cakedata]="cakes[1]"></app-cake>
+-->
+
+
+<app-cake *ngFor="let x of cakes" class="col" [cakedata]="x"></app-cake>
+
+</div>

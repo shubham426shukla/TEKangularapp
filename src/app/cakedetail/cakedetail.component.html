@@ -1,0 +1,82 @@
+<p>Here is your Cake buddy Enjoyy!!!!</p>
+
+<!-- <div *ngIf="cake" class="container mt-4 clear">
+    <h1>{{cake.name}}</h1>
+    <section class="cake-details mb-5 pt-4 pb-4">
+        <div class="col-md-12 row">
+            <div class="col-md-4 mb-4 md-mb-0">
+                <div class="mdb-lightbox">
+                    <div appHighlight class="row product-gallery mx-1">
+                        <div class="col-8 mob-0">
+                            <div class="view overlay rounded z-depth-1 main-img">
+                                <a href={{cake.image}} data size="910*923">
+                                    <img src={{cake.image}} class="img-fluid z-depth-1" style="width:100%;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div> -->
+<!--
+<div *ngIf="cake" class="col-sm-8 clear">
+    <h1>{{cake.name}}</h1>
+        <a href={{cake.image}}>
+          <img src={{cake.image}} class="img-rounded" style="height:16rem;">
+         </a>
+
+</div>
+
+
+<div class="col-sm-4 clear">
+    <h4>Cake Name:-{{cake.name}}</h4>
+    <p>Reviews:-{{cake.reviews}}</p>
+    <p>Amount:-{{cake.price | currency:"INR"}}</p>
+    <p>Description:-{{cake.description}}</p>
+
+    <p>Flavours:-{{cake.flavour}}</p>
+    <p>Ingredients:-{{cake.ingredients.join()}}</p>
+    <p>Type of Cake:-{{cake.type}}</p>
+</div>
+ -->
+
+<div class="card mb-3 clear" style="max-width: 540px; float: left">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        src="{{ cake.image }}"
+        class="img-fluid rounded-start"
+        alt="..."
+        style="height: 16rem; width: 100%"
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{ cake.name }}</h2>
+        <p class="card-text">Reviews:-{{ cake.reviews }}</p>
+        <p>Amount:-{{ cake.price | currency: "INR" }}</p>
+        <p>Description:-{{ cake.description }}</p>
+
+        <p>Flavours:-{{ cake.flavour }}</p>
+        <p>Ingredients:-{{ cake.ingredients.join() }}</p>
+        <p>Type of Cake:-{{ cake.type }}</p>
+        <p class="card-text">
+          <small class="text-muted">Last updated 2 mins ago</small>
+        </p>
+        <button (click)="addToCart()" class="btn btn-success">
+          Add To Cart
+        </button>
+        <button *ngIf="isadding" disabled type="button" class="btn btn-success">
+          Adding To Cart....
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<img
+  src="https://www.midlandbakers.com/wp-content/uploads/2020/07/cake-banner.jpg"
+  style="height: 18rem; width: 60%; float: right"
+/>

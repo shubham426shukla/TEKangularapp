@@ -1,0 +1,7 @@
+<p>search works!</p>
+{{searchitems.length}} Cakes found from your search
+
+
+<div class="row">
+    <app-cake *ngFor="let eachcake of searchitems" class="col" [cakedata]="eachcake"></app-cake>
+</div>

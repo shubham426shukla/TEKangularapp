@@ -1,0 +1,21 @@
+
+<div class="card" style="width:18rem">
+    <img (click)="showCakedetails() "style="height:16rem;" [src]="cakedata.image" class="card-img-top" alt="..."/>
+    <div class="card-body">
+        <h5 class="card-title">{{cakedata.name}}</h5>
+        <p class="card-text">{{cakedata.price | currency:"INR"}}</p>
+        <button (click)="toast()" type="button" class="btn btn-primary">Buy Now</button>
+        <label *ngIf="cakedata.special==true?true:false">
+            <button class="btn btn-success">Must try</button>
+        </label>
+        <!-- <button *ngIf="{{cakedata.special}}==true" class="btn btn-success">Must try</button>
+        -->
+      
+
+
+
+
+
+    </div>
+    </div>
+

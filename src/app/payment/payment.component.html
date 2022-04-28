@@ -1,0 +1,43 @@
+<!-- <app-cart></app-cart> -->
+<div class="container p-3 my-3 bg-dark text-white">
+  <h1>We Currently have only Cash on delievery</h1>
+</div>
+<!-- <app-cart></app-cart> -->
+
+<div class="container p-3 my-3 bg-dark text-white">
+  <h1 style="text-align: center"><strong>Payment</strong></h1>
+  <h1 style="text-align: center"><strong>Billing Address</strong></h1>
+  <!-- {{cakeorder.cake}} -->
+  <!-- <div>Cakes:{{cakeorder.cakes}}</div> -->
+  <h3>
+    <strong>Price:{{ cakeorder.price | currency: "INR" }}</strong>
+  </h3>
+  <br />
+  <h3>
+    <strong>Name:{{ cakeorder.name }}</strong>
+  </h3>
+  <br />
+  <h3>
+    <strong>Address:{{ cakeorder.address }}</strong>
+  </h3>
+  <br />
+  <h3>
+    <strong>City:{{ cakeorder.city }}</strong>
+  </h3>
+  <br />
+  <h3>
+    <strong>Pincode:{{ cakeorder.pincode }}</strong>
+  </h3>
+  <br />
+  <h3>
+    <strong>Phone No.:{{ cakeorder.phone }}</strong>
+  </h3>
+  <br />
+  <input disabled type="checkbox" name="" checked id="" /> Cash for delievery
+  <br />
+  <br />
+
+  <button (click)="placeOrder()" routerLink="/myorders" class="btn btn-primary">
+    Place Order
+  </button>
+</div>
